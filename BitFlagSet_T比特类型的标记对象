@@ -1,0 +1,15 @@
+
+		//取指定的标记位
+		BOOL GetFlagByIndex(INT const nIdx) const
+		{
+			if(0>nIdx||BIT_SIZE<=nIdx)
+			{
+				AssertEx(FALSE,"[BitFlagSet_T::GetFlagByIndex]: Index out of range!");
+				return FALSE;
+			}
+			unsigned int nIndex = nIdx;
+			return 0!=(m_aBitFlags[nIdx>>3]&(char)(1<<nIdx%8));	     //没看懂,这是在根据传入的类型 来取比特位的标记
+		}
+    
+    
+    这里的位移操作到底是干什么 没看清待查验
